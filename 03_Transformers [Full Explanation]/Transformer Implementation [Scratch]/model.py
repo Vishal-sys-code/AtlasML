@@ -42,3 +42,34 @@ class InputEmbeddings(nn.Module):
         x: The input tokens, which are integers representing the tokens in the input data.
         """
         return self.embedding(x) * math.sqrt(self.dimension_model)
+    
+# Layer 2: Positional Encodings
+class PositionalEncoding(nn.Module):
+    
+    def __init__(self, dimension_model:int, sequence_length:int, dropout: float) -> None:
+        super().__init__()
+        self.dimension_model = dimension_model
+        self.sequence_length = sequence_length
+        self.dropout = nn.Dropout(dropout)
+
+        # Create a matrix of shape (sequence_length, dimension_model)
+        positionalencoding = torch.zeros(sequence_length, dimension_model)
+        # Create a vector of shape (sequence_length, 1)
+        position = torch.arange(0, sequence_length, dtype = torch.float).unsqueeze(1) # (sequence_length, 1)
+        div_term = torch.exp(torch.arange(0, dimension_model,2)).float() * (-math.log(10000.0) / dimension_model)
+        # sin is used for even indices and cos for odd indices. We will use twice.
+        # Apply sin to even indices
+        positionalencoding[:, 0::2] = torch.sin(position * div_term)
+        # Apply cos to odd indices
+        positionalencoding[:, 1::2] = torch.cos(position * div_term)
+        # Add a batch dimension [so that it can be used in the forward method]
+        positionalencoding = positionalencoding.unsqueeze(0) # Shape: (1, sequence_length, dimension_model)
+        # Register the positional encoding as a buffer so that it is not considered a parameter
+        self.register_buffer('positionalencoding', positionalencoding)
+
+    def forward(self, x):
+        """
+        Adding the positional encoding to the input embeddings.
+        """
+        x = x + (self.positionalencoding[:, :x.shape[1], :])
+        return self.dropout(x)
