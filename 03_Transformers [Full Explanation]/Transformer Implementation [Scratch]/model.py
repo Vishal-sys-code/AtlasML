@@ -73,3 +73,5 @@ class PositionalEncoding(nn.Module):
         """
         x = x + (self.positionalencoding[:, :x.shape[1], :])
         return self.dropout(x)
+    
+# Layer Normalization
