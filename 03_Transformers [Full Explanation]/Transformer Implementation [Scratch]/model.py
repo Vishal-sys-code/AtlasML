@@ -98,3 +98,22 @@ class LayerNormalization(nn.Module):
         std = x.std(dim = -1, keepdim = True)
         normalized = self.alpha * (x - mean) / (std + self.eps) + self.bias
         return normalized
+    
+# Feed Forward Neural Network
+"""
+In the paper "Attention is all you need" mentioned that it is a Fully Connected Layer with ReLU activation function.
+
+FFN(x) = max(0, xW1 + b1)W2 + b2
+"""
+class FeedForwardBlock(nn.Module):
+
+    def __init__(self, dimension_model: int, dimension_ffn: int, dropout: float) -> None:
+        super().__init__()
+        self.linear1 = nn.Linear(dimension_model, dimension_ffn) # W1 and B1
+        self.dropout = nn.Dropout(dropout)
+        self.linear2 = nn.Linear(dimension_ffn, dimension_model) # W2 and B2
+
+    def forward(self, x):
+        # Batch, Sequence, Dimension
+        # (batch, sequence_length, dimension_model) -> (batch, sequence_length, dimension_ffn) -> (batch, sequence_length, dimension_model)
+        return self.linear2(self.dropout(torch.relu(self.linear1(x))))
