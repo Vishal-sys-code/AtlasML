@@ -75,3 +75,26 @@ class PositionalEncoding(nn.Module):
         return self.dropout(x)
     
 # Layer Normalization
+class LayerNormalization(nn.Module):
+    """
+    Formula of the Layer Normalization:
+    y = alpha * (x - mean) / sqrt(variance + eps) + bias
+
+    Epsilon is a small value to avoid division by zero. The value is typically set to 1e-6.
+    The alpha and bias are learnable parameters that are multiplied and added to the output.
+    """
+    def __init__(self, eps: float = 1e-6) -> None:
+        super().__init__()
+        self.eps = eps
+        self.alpha = nn.Parameter(torch.ones(1)) # Multiplied
+        self.bias = nn.Parameter(torch.zeros(1)) # Added
+
+    def forward(self, x):
+        """
+        Notes:
+        dim = -1 referes to the last dimension of the tensor.
+        """
+        mean = x.mean(dim = -1, keepdim = True)
+        std = x.std(dim = -1, keepdim = True)
+        normalized = self.alpha * (x - mean) / (std + self.eps) + self.bias
+        return normalized
