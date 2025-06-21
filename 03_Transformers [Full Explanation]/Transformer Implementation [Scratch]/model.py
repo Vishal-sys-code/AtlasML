@@ -117,3 +117,29 @@ class FeedForwardBlock(nn.Module):
         # Batch, Sequence, Dimension
         # (batch, sequence_length, dimension_model) -> (batch, sequence_length, dimension_ffn) -> (batch, sequence_length, dimension_model)
         return self.linear2(self.dropout(torch.relu(self.linear1(x))))
+
+# Multi Head Attention
+class MultiHeadAttention(nn.Module):
+
+    def __init__(self, dimension_model: int, head: int, dropout: float) -> None:
+        super().__init__()
+        self.dimension_model = dimension_model
+        self.head = head
+        assert dimension_model % head == 0, "dimension_model is not divisible by head"
+        self.d_k = dimension_model // head  # Dimension of each head
+        self.w_q = nn.Linear(dimension_model, dimension_model) # Weight for query
+        self.w_k = nn.Linear(dimension_model, dimension_model) # Weight for key
+        self.w_v = nn.Linear(dimension_model, dimension_model) # Weight for value
+        # d_v is the dimension of the value, which is the same as d_k
+        # In paper, they have used the same dimension for query, key and value.
+        self.w_o = nn.Linear(dimension_model, dimension_model) # Weight for output
+        self.dropout = nn.Dropout(dropout)
+
+    def forward(self, q, k, v, mask):
+        query = self.w_q(q)  # (batch, sequence_length, dimension_model) -> (batch, sequence_length, dimension_model)
+        key = self.w_k(k)    # (batch, sequence_length, dimension_model) -> (batch, sequence_length, dimension_model)
+        value = self.w_v(v)  # (batch, sequence_length, dimension_model) -> (batch, sequence_length, dimension_model)
+        # (batch, sequence_length, dimension_model) -> (batch, sequence_length, head, d_k) -> (batch, head, sequence_length, d_k)
+        query = query.view(query.shape[0], query.shape[1], self.head, self.d_k).transpose(1, 2)  # (batch, head, sequence_length, d_k)
+        key = key.view(key.shape[0], key.shape[1], self.head, self.d_k).transpose(1, 2)          # (batch, head, sequence_length, d_k)
+        value = value.view(value.shape[0], value.shape[1], self.head, self.d_k).transpose(1, 2)  # (batch, head, sequence_length, d_k)
