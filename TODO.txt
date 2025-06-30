@@ -1,4 +1,4 @@
-1. Python Concepts [4 important topics]
+1. Python Concepts [4 important topics] -> Concurrency is remanining
 2. AB TESTING
 3. Bayesian Probablity Problems
 4. FASTApi
