@@ -1,0 +1,35 @@
+1. Python Concepts [4 important topics]
+2. AB TESTING
+3. Bayesian Probablity Problems
+4. FASTApi
+5. DOCKER
+6. RAG
+7. JAX
+8. Orchestration
+
+9. ML Sys Design
+10. ML and DL Algorithms Implementation
+
+############################################################################################################################################
+---------------- Paper Implementation [Required/Blog] ---------------- 
+- Attention is all you Need
+- CLIP
+- ALIGN
+- BLIP
+- MAMBA
+- RWKV
+- RetNet
+- LoRa
+- VeRa
+- MoE and Sparse MoE
+- DeepSeek R1
+
+---------------- Scratch Implementation [Making my hands on to the code in repo] ---------------- 
+- Coding a Multimodel Vision Language Model (Umar Jamil)
+- Flash Attention Derived and Coded with Triton
+- KAN vs MLP
+- DPO Implementation
+- RLHF Implementation
+- Quantization with pytorch
+
+############################################################################################################################################
