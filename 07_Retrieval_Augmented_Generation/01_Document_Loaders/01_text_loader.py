@@ -9,7 +9,7 @@ load_dotenv()
 
 loader = TextLoader('../../00_Datasets/cricket.txt', encoding = 'utf-8')
 docs = loader.load()
-
+"""
 model = ChatOpenAI()
 prompt =  PromptTemplate(
     template = 'Write a summary for the following poem - \n {poem}',
@@ -20,7 +20,4 @@ chain = prompt | model | parser
 
 # Invoke the chain with the document's content and store the result
 summary = chain.invoke({'poem': docs[0].page_content})
-
-# Print the generated summary
-print("\n--- Generated Summary ---\n")
-print(summary)
+"""
