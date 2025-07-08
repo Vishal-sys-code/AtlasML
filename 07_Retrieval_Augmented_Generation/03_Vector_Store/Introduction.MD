@@ -39,3 +39,8 @@ If you add some features => Distributed, backup and restore, ACID transaction, c
     * Examples: Pinecone, Qdrant, Milvus, Weaviate
 
 A vector DB is effiectively a vector store with extra DB features(e.g. clustering, scaling, security, metadata filtering, and durability)
+
+## **Vector Stores in Langchain**
+* **Supported Stores:** Langchain integrates with multiple vector stores (FAISS, PineCone, Chroma, Qdrant, Weaviate, etc.), giving you flexibility in scale, featuresm and development.
+* **Common interface:** A uniform vector store API lets you swap out one backend (e.g. FAISS) for another (e.g. PineCone) with minimal code changes
+* **Metadata handling:** Most vector stores in Langchain allow you to attach metadata (e.g. timestamps, authors) to each document, enabling filter-based retrieval.
