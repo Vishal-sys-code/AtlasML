@@ -25,6 +25,7 @@ A vector store is a system designed to store and retrieve data represented as nu
 
 Remember => Vector Store gives you: Storage and Retrieval...
 If you add some features => Distributed, backup and restore, ACID transaction, concurrency, authentication. => This will give the feature of the vector database.
+[Vector Stores + Features of DB = Vector DB]
 
 * **Vector Database**
     * A full fledged DB system designed to store and query vectors.
