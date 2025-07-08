@@ -15,6 +15,3 @@ splitter = RecursiveCharacterTextSplitter(
 result = splitter.split_documents(docs)
 print(f"The PDF was split into {len(result)} documents.")
 
-if result:
-    print("\n--- First chunk ---")
-    print(result[0].page_content)
