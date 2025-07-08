@@ -36,3 +36,6 @@ If you add some features => Distributed, backup and restore, ACID transaction, c
         * Potential for ACID or near-ACID guarantees
         * Authentication / Authorization and more advanced security
     * Geared for production environments with significant scaling, large datasets.
+    * Examples: Pinecone, Qdrant, Milvus, Weaviate
+
+A vector DB is effiectively a vector store with extra DB features(e.g. clustering, scaling, security, metadata filtering, and durability)
