@@ -23,6 +23,9 @@ A vector store is a system designed to store and retrieve data represented as nu
     * Ideal for prototyping, similar-scale applications
     * Examples: FAISS(where you can store vectors and can query them by similarity, but you handle persistence and scaling seperately).
 
+Remember => Vector Store gives you: Storage and Retrieval...
+If you add some features => Distributed, backup and restore, ACID transaction, concurrency, authentication. => This will give the feature of the vector database.
+
 * **Vector Database**
     * A full fledged DB system designed to store and query vectors.
     * Offers additional "database-like" features:
