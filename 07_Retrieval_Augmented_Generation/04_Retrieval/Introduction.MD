@@ -34,3 +34,24 @@ A vector store retriever in langchain is the most common type of retriever that 
     - It's also turned into a vector
     - The retriever compares the query vector with the stored vectors
     - It retrives the top-k most similar ones
+
+## **Maximum Marginal Relevance Retriever**
+"How can we pick results that are not only relevant to the query but also different from each other"
+
+MMR is an information retrieval algotithm designed to reduce redundancy in the retrieved results while maintaining high relevance to the query.
+
+**Why MMR Retriever?**
+In regular similarity search you may get documents that are:
+- ALl very similar to each other
+- Repeating the same info
+- Lacking diverse perspectives
+
+MMR Retriever avoids that by:
+- Picking the most relevant documents first
+- Then picking the nect most relevant and least similar to already selected docs.
+- And so on...
+
+This helps especially in RAG pipelines where:
+- You want your context window to contain diverse but still relevant information
+- Especially useful when documents are semantically overlapping.
+
