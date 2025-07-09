@@ -25,3 +25,12 @@ A wikipedia retriever is a retriever that queries the wikipedia API to fetch rel
 - It retrieves the most relevant articles
 - It returns them as Langchain Document objects
 
+## **Vector Store Retriever**
+A vector store retriever in langchain is the most common type of retriever that lets you search and fetch documents from a vector store based on semantic similarity using vector embeddings
+**How it works**
+- You store your documents in a vector store (like: FAISS, Chroma, Weaviate)
+- Each document is converted into a dense vector using an embedding model
+- When the user entries a query:
+    - It's also turned into a vector
+    - The retriever compares the query vector with the stored vectors
+    - It retrives the top-k most similar ones
