@@ -55,3 +55,11 @@ This helps especially in RAG pipelines where:
 - You want your context window to contain diverse but still relevant information
 - Especially useful when documents are semantically overlapping.
 
+## **Multi-Query Retriever**
+"Sometimes a single query might not capture all the ways information is phrased in your documents"
+
+**How does it works?**
+- Takes your original query
+- Uses an LLM (e.g. GPT 3.5) to generate multiple sementically different version of that query.
+- Performs retrieval for each sub-query.
+- Combines and de-duplicates the results.
