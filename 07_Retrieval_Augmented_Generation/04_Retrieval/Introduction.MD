@@ -63,3 +63,18 @@ This helps especially in RAG pipelines where:
 - Uses an LLM (e.g. GPT 3.5) to generate multiple sementically different version of that query.
 - Performs retrieval for each sub-query.
 - Combines and de-duplicates the results.
+
+## **Contextual Compression**
+
+The Contextual Compression retriever in Langchain is an advanced retriever that improves retrieval quality by compressing documents after retrieval keeping only the relevant content based on the user's query.
+
+**How it works**
+- Base retrievers (e.g. FAISS, Chroma) retrieves N documents
+- A compressor (usually an LLM) is applied to each deocument
+- The compressor keeps only the parts relevant to the query.
+- Irrelevant content is disabled.
+
+**When to use**
+- Your documents are long and contain mixed information.
+- You want to reduce context length for LLMs.
+- You need to improve answer accuracy in RAG pipelines.
