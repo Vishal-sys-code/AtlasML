@@ -1,6 +1,15 @@
 # **What are included in this Docker Series**
 - What is Docker?
-- What are Containers?
-- Containers vs Virtual Machines
-- Docker Image vs Containers
-- Practical Implementation of Dockers
+- Need for Docker
+- How is docker used?
+- Docker Engine
+- Docker Image
+- Docker File
+- Docker Container
+- Registry
+- LifeCycle
+- Use-cases
+- Setup
+- Pulling image from github
+- Dockerising Flask App
+- Pushing Image to DockerHub
