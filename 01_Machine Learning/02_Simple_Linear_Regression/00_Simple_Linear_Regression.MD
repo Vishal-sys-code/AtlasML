@@ -21,7 +21,7 @@ $$
 
 ## Simple Linear Regression using Library
 
-```
+```python
 from sklearn.linear_model import LinearRegression
 lr = LinearRegression()
 lr.fit(X_train, y_train)
