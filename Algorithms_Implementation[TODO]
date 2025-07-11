@@ -1,0 +1,51 @@
+- Implement Simple Linear Regression with Maths, Library and Gradient Descent [Batch, SGD, MiniBatch]
+- Implement Multiple Linear Regression with Maths, Library and Gradient Descent [Batch, SGD, MiniBatch]
+- Polynomial Regression
+- Ridge and Lasso [with and without Gradient Descent([Batch, SGD, MiniBatch])]
+- ElasticNet Regression
+- Logistic Regression [with and without Gradient Descent([Batch, SGD, MiniBatch])]
+- Reg Metrics + Accuracy and Confusion Matrix + Precision, Recall and F1 Score
+- Decision Trees
+- Regression Trees
+- Ensemble Learning: [Voting, Bagging, Stacking and Blending] => For both classification and regression both
+- Random Forest
+- GridSearchCV and RandomisedSearchCV
+- Out of Bag Evaluation 
+- Ada Boost
+- K-Means
+- Gradient Boosting (for both classification and regression)
+- Agglomerative Hierarchical Clustering
+- KNN
+- SVM [with and without kernel]
+- Naive Bayes
+- XGBOOST / CATBOOST 
+- DBSCAN
+
+##########################################################################################################################
+- Perceptron
+- MLP + Memoization
+- Forward Propagation
+- Loss function in DL 
+- Backpropagations
+- Vanishing Gradient Problem
+- Early Stopping
+- Droupout
+- Regularization
+- RELU Variants
+- Weigth Intialization
+- Batch Normalization
+- Optimiers [Momentum, NAG, ADAGRAD, ADAM]
+- EMWA
+- CNN [with backpropagation], Data Augmentation, Pretrained in CNN
+- Transfer Learning
+- Keras Functional Module
+- RNNs [Types, Backpropagation]
+- LSTMs
+- GRUs
+- Deep RNNs
+- Bidirectional RNNs
+- Encoder Decoder
+- Attention [Bahadnau + Luong]
+- Transformer -> new directory
+
+#########################################################################################################################
