@@ -6,8 +6,8 @@
 - By default sklearn has implemented the LinearRegression in the closed form solution i.e. Ordinary Least Squares (OLS).
 - There is an another class called SGDRegression when there is a non-closed form of solution then we use this.
 
-**Closed Form Solution:** Finite set of function using airthmetic operations. -> 1D
-**Non-Closed Form Solution:** Finite set of function using differentiation and integration. -> For higher dimensions
+**Closed Form Solution:** Finite set of function using airthmetic operations. -> 1D <br>
+**Non-Closed Form Solution:** Finite set of function using differentiation and integration. -> For higher dimensions<br>
 
 ## Simple Linear Regression using Maths or Normal Equation
 
@@ -21,8 +21,10 @@ $$
 
 ## Simple Linear Regression using Library
 
-## Simple Linear Regression using Batch Gradient Descent
-
-## Simple Linear Regression using Stochastic Gradient Descent
-
-## Simple Linear Regression using Mini Batch Gradient Descent
+```
+from sklearn.linear_model import LinearRegression
+lr = LinearRegression()
+lr.fit(X_train, y_train)
+y_pred = lr.predict(X_test)
+print(y_pred)
+```
