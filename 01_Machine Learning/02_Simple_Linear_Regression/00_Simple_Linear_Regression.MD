@@ -11,13 +11,13 @@
 
 ## Simple Linear Regression using Maths or Normal Equation
 
-\[
+$$
 \text{slope} = \frac{\sum_{i=1}^{N} (y_i - \bar{y})(x_i - \bar{x})}{\sum_{i=1}^{N} (x_i - \bar{x})^2}
-\]
+$$
 
-\[
+$$
 \text{intercept} = \bar{y} - \text{slope} \cdot \bar{x}
-\]
+$$
 
 ## Simple Linear Regression using Library
 
