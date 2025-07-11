@@ -28,3 +28,16 @@ lr.fit(X_train, y_train)
 y_pred = lr.predict(X_test)
 print(y_pred)
 ```
+## Loss function of Simple Linear Regression
+
+$$
+\mathcal{L} = \frac{1}{N} \sum_{i=1}^{N} \left( y_i - (\hat{y}_i) \right)^2
+$$
+
+Where:
+
+- \( y_i \) is the true value
+- \( \hat{y}_i = mx_i + b \) is the predicted value using the learned model
+- \( m \) is the slope
+- \( b \) is the intercept
+- \( N \) is the number of data points
