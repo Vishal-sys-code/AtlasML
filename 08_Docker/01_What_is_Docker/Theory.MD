@@ -26,8 +26,9 @@ In software development, Docker acts like that pre-packed container with everyth
 
 - **Scalability:**
     - **Problem:** Scaling applications to handle increased load can be challenging, requiring manual intervention and configuration
-    - **Solution:* * Docker makes it easy to scale application horizontally by running multiple container instances, allowing for quick and efficient scaling.
+    - **Solution:** Docker makes it easy to scale application horizontally by running multiple container instances, allowing for quick and efficient scaling.
 
     [For scalability, we run our project on different servers or different machines. Suppose, in noon the users of uber eats are low so you are running the app on 3 servers however in night there are lots of customers then you need to add 2-3 more servers additionally. Thus, for the scalability we need to sue the docker. Containerize it and run on different machines or servers.]
 
 ## **How exactly Docker is used?**
+[DH](Docker-hub-registry.jpg)
