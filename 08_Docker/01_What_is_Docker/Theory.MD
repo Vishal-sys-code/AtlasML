@@ -22,6 +22,8 @@ In software development, Docker acts like that pre-packed container with everyth
     - **Problem:** Running multiple applications on the same host can lead to conflicts such as: dependency clashes or resource contention
     - **Solution:** Docker provides isolated environments for each application, preventing interference and ensuring stable performance.
 
+    [For isolation we can use the Virtual Machines, however those are too heavy because they include OS also. Where as the docker contains only the environment files and the project files.]
+
 - **Scalability:**
     - **Problem:** Scaling applications to handle increased load can be challenging, requiring manual intervention and configuration
     - **Solution:** Docker makes it easy to scale application horizontally by running multiple container instances, allowing for quick and efficient scaling.
