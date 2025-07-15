@@ -74,5 +74,8 @@ CMD ["python", "app.py"]
 ## **Docker Container** 
 A docker container is a lightweight, portable, and isolated environment that encapsulated an application and its dependencies, allowing it to run consistently across different computing environments. Containers are created from docker images, which are immutable and contain all the necessary components for the application to run.
 
+***Summary:*** When we execute the docker image and the instance we get that is called the docker container.
+***Example:*** DVD is the image, when we use to play on TV it is the instance that is playing so that will be the container. 
+
 ## **Registry**
 A docker registry is a service that stores and distributes Docker images. It acts as a repository where users can push, pull, and manages Docker images. Docker Hub is the most well-known publish registry, but private registries can also be set up to securely store and manage images within an organization.
