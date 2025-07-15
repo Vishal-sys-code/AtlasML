@@ -79,3 +79,22 @@ A docker container is a lightweight, portable, and isolated environment that enc
 
 ## **Registry**
 A docker registry is a service that stores and distributes Docker images. It acts as a repository where users can push, pull, and manages Docker images. Docker Hub is the most well-known publish registry, but private registries can also be set up to securely store and manage images within an organization.
+
+In the docker image life cycle -> the storage part is called the registry. 
+
+**Key Components of a Docker Registry**
+- **Repositories:** A repository is a collection of related Docker images, typically different versions of the same application. Each repository can hold multiple tags, representing different versions of an image.
+- **Tags:** Tags are used to version images within a repository. For example: myapp:1.0, myapp:2.0 and myapp:latest are tags for different versions of the myapp image.
+
+**Types of Docker Registries**
+- **Docker Hub:**
+    - **Description:** The default public registry provided by docker, which hosts a vast number of public images and also supports private repositories.
+    - **URL:** hub.docker.com
+    - **Use Case:** Publicly sharing images and accessing a large collection of pre-built images from the community and official repositories.
+- **Private Registries:**
+    - **Description:** Custom registries set up by organizations to securely store and manage their own Docker images
+    - **Use case:** Ensuring security and control over image distribution within an organization.
+- **Third-party registries:**
+    - **Examples:** Amazon Elastic Container Registry (ECR), Google Container Registry (GCR), Azure Container Registry (ACR).
+    - **Use Case:** Integrating with cloud platforms for seamless deployment and management of images within cloud infrastructure.
+
