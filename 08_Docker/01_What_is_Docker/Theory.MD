@@ -31,4 +31,4 @@ In software development, Docker acts like that pre-packed container with everyth
     [For scalability, we run our project on different servers or different machines. Suppose, in noon the users of uber eats are low so you are running the app on 3 servers however in night there are lots of customers then you need to add 2-3 more servers additionally. Thus, for the scalability we need to sue the docker. Containerize it and run on different machines or servers.]
 
 ## **How exactly Docker is used?**
-[DH](Docker-hub-registry.jpg)
+![DH](Docker-hub-registry.jpg)
