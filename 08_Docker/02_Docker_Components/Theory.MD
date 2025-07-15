@@ -34,3 +34,45 @@ A docker image is a lightweight, stand-alone, and executable software package th
 - **Execution:** Images are executed by running containers, which are instances of these images
 
 ## **DockerFile**
+A dockerfile is a text file that contains a series of instructions used to build a docker image. Each instruction in a dockerfile creates a layer in the image, allowing for efficient image creation and reuse of layers. Dockerfiles are used to automate the image creation process, ensuring consistency and reproducibility.
+
+**Key Components of a DockerFile**
+- **Base Image (FROM):** Specifies the starting point for the image, which could be a minimal operating system, a specific version of a language runtime or another image.
+- **Labels (LABEL):** Adds metadata to the image, such as version, description, or maintainer.
+- **Run Commands (RUN):** Executes commands in the image during the build process, typically used to install software packages.
+- **Copy Files (COPY):** Copies files or directories from the host system to the image
+- **Environment Variables (ENV):** Sets env variables in the iamge
+- **Work Directory (WORKDIR):** Sets the working directory for subsequent instructions.
+- **Expose Ports (EXPOSE):** Informs Docker that the container listens on specified network.
+- **Command (CMD):** Provides a default command to run when the container starts
+- **Volume (VOLUME):** Creates a mount point with a specified path and marks it as holding externally mounted volumes from the host or other containers
+- **Arguments (ARG):** Defines build-time variables.
+
+```python
+# Use an official python runtime as a base image
+FROM python:3.8-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY ./app
+
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
+# Define environment variable
+ENV NAME World
+
+# Run app.py when the container launches
+CMD ["python", "app.py"]
+```
+
+## **Docker Container** 
+A docker container is a lightweight, portable, and isolated environment that encapsulated an application and its dependencies, allowing it to run consistently across different computing environments. Containers are created from docker images, which are immutable and contain all the necessary components for the application to run.
+
+## **Registry**
+A docker registry is a service that stores and distributes Docker images. It acts as a repository where users can push, pull, and manages Docker images. Docker Hub is the most well-known publish registry, but private registries can also be set up to securely store and manage images within an organization.
