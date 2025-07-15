@@ -98,3 +98,10 @@ In the docker image life cycle -> the storage part is called the registry.
     - **Examples:** Amazon Elastic Container Registry (ECR), Google Container Registry (GCR), Azure Container Registry (ACR).
     - **Use Case:** Integrating with cloud platforms for seamless deployment and management of images within cloud infrastructure.
 
+**Benefits of Using Docker Registries**
+- **Centralised Image Management:** Registries provide a centralized location to store and manage Docker images, making it easier to organize and distribute them.
+- **Version Control:** Using tags, registries allow version control of images, enabling users to easily roll back to prev versions if needed.
+- **Collaboration:** Public registries like: Docker Hub faciliate collaboration by allowing users to share images with the community or within teams.
+- **Security:** Private registries ensure that sensitive images are stored securely and access is controlled within an organization.
+- **Integration with CI/CD:** Registries integrate seamlessly with CI/CD pipelines, automating the process of building, storing, and deploying Docker images.
+
