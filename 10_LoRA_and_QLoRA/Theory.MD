@@ -99,9 +99,11 @@ Similarly for $W_v$.
 ![LoRA Architecture](https://miro.medium.com/v2/resize:fit:1200/0*c-4GJSAP8WfDkxfm.gif)
 
 So, Mathematically:
+
 $$
 \text{Output} = W_q x + B_q \left( A_q x \right)
 $$
+
 Here, only $𝐴_𝑞$ and $𝐵_𝑞$ are updated during training.
 
 
