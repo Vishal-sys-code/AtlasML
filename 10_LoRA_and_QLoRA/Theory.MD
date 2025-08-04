@@ -245,7 +245,7 @@ Note:
 | **Forward Computation**         | $W x + B^\top (A^\top x)$ with $W$ in FP16                                | $Q(W) x + B^\top (A^\top x)$ with $Q(W)$: dequantized 4-bit base weight                           |
 | **Inference Model Size**        | Base model + LoRA adapters (~1% additional)                              | Quantized base model + small LoRA adapters (~0.5% additional)                                   |
 | **Merging for Deployment**      | Can merge $W' = W + AB$ to single matrix                                 | More complex: requires dequantizing, summing, then re-quantizing to 4-bit                       |
-| **Multi-Task Adaptability**     | Easy — multiple adapters per task                                       | Same — multiple low-rank adapters, each task shares the same 4-bit base                          |
+| **Multi-Task Adaptability**     | Easy - multiple adapters per task                                       | Same - multiple low-rank adapters, each task shares the same 4-bit base                          |
 | **Downstream Performance**      | Often matches or exceeds full fine-tuning                                | Matches LoRA and full fine-tuning in most benchmark tasks                                        |
 
 -----
