@@ -99,9 +99,11 @@ Similarly for $W_v$.
 ![LoRA Architecture](https://miro.medium.com/v2/resize:fit:1200/0*c-4GJSAP8WfDkxfm.gif)
 
 So, Mathematically:
+
 $$
 \text{Output} = W_q x + B_q \left( A_q x \right)
 $$
+
 Here, only $𝐴_𝑞$ and $𝐵_𝑞$ are updated during training.
 
 
@@ -245,7 +247,7 @@ Note:
 | **Forward Computation**         | $W x + B^\top (A^\top x)$ with $W$ in FP16                                | $Q(W) x + B^\top (A^\top x)$ with $Q(W)$: dequantized 4-bit base weight                           |
 | **Inference Model Size**        | Base model + LoRA adapters (~1% additional)                              | Quantized base model + small LoRA adapters (~0.5% additional)                                   |
 | **Merging for Deployment**      | Can merge $W' = W + AB$ to single matrix                                 | More complex: requires dequantizing, summing, then re-quantizing to 4-bit                       |
-| **Multi-Task Adaptability**     | Easy — multiple adapters per task                                       | Same — multiple low-rank adapters, each task shares the same 4-bit base                          |
+| **Multi-Task Adaptability**     | Easy - multiple adapters per task                                       | Same - multiple low-rank adapters, each task shares the same 4-bit base                          |
 | **Downstream Performance**      | Often matches or exceeds full fine-tuning                                | Matches LoRA and full fine-tuning in most benchmark tasks                                        |
 
 -----
